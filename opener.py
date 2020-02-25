@@ -14,5 +14,19 @@ def reader():
 		mass.append(impermanent_mass)
 	print(mass)
 reader()
+a = reader()
+
+
+def column_score(all_info, amount_country):
+	column = []
+	for i in range(amount_country):
+		fx = []
+		for j in range(amount_country):
+			country_info = all_info[j].split(",")
+			fx.append([country_info[0],country_info[i+1]])
+		column.append(fx)
+	print(column)
+			
 	
+column_score(a[0], a[1])
 
