@@ -1,19 +1,19 @@
 import os
 
 def reader():
-	mass = []
-	direct = os.scandir("var1")
-	direct = os.scandir(direct)
+	teca = input("Введіть назву теки:")
+	all_info = []
+	direct = os.scandir(teca)
 	amount_country = 0
 	for i in direct:
 		impermanent_mass = []
-		if i.is_file:
+		if i.is_file and ".csv" in str(i):
 			file1 = open(i, 'r')
 			for line in file1:
 				impermanent_mass.append(line)
-		mass.append(impermanent_mass)
-	print(mass)
-reader()
+		all_info += impermanent_mass[1::]
+		amount_country += int(impermanent_mass[0])
+	return(all_info, amount_country)
 a = reader()
 
 
@@ -27,6 +27,6 @@ def column_score(all_info, amount_country):
 		column.append(fx)
 	print(column)
 			
-	
+
 column_score(a[0], a[1])
 
