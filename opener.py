@@ -3,6 +3,8 @@ import os
 def reader():
 	mass = []
 	direct = os.scandir("var1")
+	direct = os.scandir(direct)
+	amount_country = 0
 	for i in direct:
 		impermanent_mass = []
 		if i.is_file:
