@@ -1,4 +1,5 @@
 import os
+from sorter import sorter
 
 def reader():
 	teca = input("Введіть назву теки:")
@@ -14,7 +15,6 @@ def reader():
 		all_info += impermanent_mass[1::]
 		amount_country += int(impermanent_mass[0])
 	return(all_info, amount_country)
-a = reader()
 
 
 def column_score(all_info, amount_country):
@@ -26,7 +26,12 @@ def column_score(all_info, amount_country):
 			fx.append([country_info[0],country_info[i+1]])
 		column.append(fx)
 	print(column)
-			
+	return column
 
-column_score(a[0], a[1])
+
+if __name__ == "__main__":
+	a = reader()
+	info = column_score(a[0], a[1])
+	res = sorter(info)
+	print(res)
 
